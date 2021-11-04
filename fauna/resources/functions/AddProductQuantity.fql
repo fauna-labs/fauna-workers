@@ -1,0 +1,35 @@
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
+
+CreateFunction({
+  name: "AddProductQuantity",
+  body: Query(Lambda(
+    ["productID", "quantity"],
+    Let(
+      {
+        productRef: Ref(Collection("Products"), Var("productID")),
+        productDocument: Get(Var("productRef")),
+        currentQuantity: Select(["data", "quantity"], Var("productDocument")),
+        newDocument: Update(
+          Var("productRef"),
+          {
+            data: {
+              quantity: Add(
+                Var("currentQuantity"),
+                Var("quantity")
+              )
+            }
+          }
+        )
+      },
+      {
+        id: Select(["ref", "id"], Var("newDocument")),
+        serialNumber: Select(["data", "serialNumber"], Var("newDocument")),
+        title: Select(["data", "title"], Var("newDocument")),
+        weightLbs: Select(["data", "weightLbs"], Var("newDocument")),
+        quantity: Select(["data", "quantity"], Var("newDocument"))
+      }
+    )
+  )),
+  role: Role("AddProductQuantityUDF")
+})

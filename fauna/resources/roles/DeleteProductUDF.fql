@@ -1,0 +1,14 @@
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
+
+CreateRole({
+  name: "DeleteProductUDF",
+  privileges: [
+    {
+      resource: Collection("Products"),
+      actions: {
+        delete: true
+      }
+    }
+  ]
+})

@@ -1,0 +1,22 @@
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
+
+CreateFunction({
+  name: "GetProductByID",
+  body: Query(Lambda(
+    "productID",
+    Let(
+      {
+        document: Get(Ref(Collection("Products"), Var("productID")))
+      },
+      {
+        id: Select(["ref", "id"], Var("document")),
+        serialNumber: Select(["data", "serialNumber"], Var("document")),
+        title: Select(["data", "title"], Var("document")),
+        weightLbs: Select(["data", "weightLbs"], Var("document")),
+        quantity: Select(["data", "quantity"], Var("document"))
+      }
+    )
+  )),
+  role: Role("GetProductUDF")
+})

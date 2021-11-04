@@ -1,0 +1,32 @@
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
+
+CreateRole({
+  name: "Worker",
+  privileges: [
+    {
+      resource: Function("CreateProduct"),
+      actions: {
+        call: true
+      }
+    },
+    {
+      resource: Function("GetProductByID"),
+      actions: {
+        call: true
+      }
+    },
+    {
+      resource: Function("AddProductQuantity"),
+      actions: {
+        call: true
+      }
+    },
+    {
+      resource: Function("DeleteProduct"),
+      actions: {
+        call: true
+      }
+    }
+  ]
+})

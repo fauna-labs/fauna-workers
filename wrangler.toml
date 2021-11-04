@@ -1,0 +1,11 @@
+# Copyright Fauna, Inc.
+# SPDX-License-Identifier: MIT-0
+
+name = "fauna-workers"
+type = "webpack"
+
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-11-02"

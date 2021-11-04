@@ -1,0 +1,25 @@
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
+
+CreateFunction({
+  name: "DeleteProduct",
+  body: Query(Lambda(
+    "productID",
+    Let(
+      {
+        deletedDocument: Delete(Ref(
+          Collection("Products"),
+          Var("productID")
+        ))
+      },
+      {
+        id: Select(["ref", "id"], Var("deletedDocument")),
+        serialNumber: Select(["data", "serialNumber"], Var("deletedDocument")),
+        title: Select(["data", "title"], Var("deletedDocument")),
+        weightLbs: Select(["data", "weightLbs"], Var("deletedDocument")),
+        quantity: Select(["data", "quantity"], Var("deletedDocument"))
+      }
+    )
+  )),
+  role: Role("DeleteProductUDF")
+})
