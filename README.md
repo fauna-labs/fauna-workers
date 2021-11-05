@@ -99,18 +99,18 @@ When you created your database, you specified a Region Group.  Connections to th
     EU Region Group:
     ```console
     $ wrangler secret put FAUNA_DOMAIN
-    Enter the secret text you'd like assigned to the variable FAUNA_DOMAIN on the script named rest-api:
+    Enter the secret text you'd like assigned to the variable FAUNA_DOMAIN on the script named my-fauna-api:
     db.eu.fauna.com
-    🌀  Creating the secret for script name rest-api
+    🌀  Creating the secret for script name my-fauna-api
     ✨  Success! Uploaded secret FAUNA_DOMAIN.
     ```
 
     US Region Group:
     ```console
     $ wrangler secret put FAUNA_DOMAIN
-    Enter the secret text you'd like assigned to the variable FAUNA_DOMAIN on the script named rest-api:
+    Enter the secret text you'd like assigned to the variable FAUNA_DOMAIN on the script named my-fauna-api:
     db.us.fauna.com
-    🌀  Creating the secret for script name rest-api
+    🌀  Creating the secret for script name my-fauna-api
     ✨  Success! Uploaded secret FAUNA_DOMAIN.
     ```
 
