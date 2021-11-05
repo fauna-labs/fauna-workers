@@ -24,7 +24,6 @@ Change into the *my-fauna-api* directory, install the project dependencies, and 
 
 ```console
 $ cd my-fauna-api
-$ npm install
 $ wrangler publish
 ```
 
@@ -94,10 +93,25 @@ If you created your database in the *Classic* Region Group, you can skip to [Tes
 
 When you created your database, you specified a Region Group.  Connections to the database need to be configured with the corresponding Region Group endpoint.  If this is a child database, the Region Group will already be set to match the parent database.  If your database is in the `Classic` region group, then the default configuration is already set.  Otherwise, configure your project for the correct Region Group as follows:
 
-1. Refer to the [Region Groups][fauna-region-groups] documentation to obtain the correct endpoint for your Region Group.
-1. Set the `FAUNA_DOMAIN` environment variable to the endpoint you obtain in the previous step.
+1.  Refer to the [Region Groups][fauna-region-groups] documentation to obtain the correct endpoint for your Region Group.
+1.  Set the `FAUNA_DOMAIN` environment variable to the appropriate endpoint.
+
+    EU Region Group:
     ```console
     $ wrangler secret put FAUNA_DOMAIN
+    Enter the secret text you'd like assigned to the variable FAUNA_DOMAIN on the script named rest-api:
+    db.eu.fauna.com
+    🌀  Creating the secret for script name rest-api
+    ✨  Success! Uploaded secret FAUNA_DOMAIN.
+    ```
+
+    US Region Group:
+    ```console
+    $ wrangler secret put FAUNA_DOMAIN
+    Enter the secret text you'd like assigned to the variable FAUNA_DOMAIN on the script named rest-api:
+    db.us.fauna.com
+    🌀  Creating the secret for script name rest-api
+    ✨  Success! Uploaded secret FAUNA_DOMAIN.
     ```
 
 ## Testing your API
