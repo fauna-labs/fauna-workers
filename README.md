@@ -8,7 +8,9 @@ This template helps you build a fast, globally distributed REST API using [Cloud
 
 The template uses [Fauna Schema Migrate](https://github.com/fauna-labs/fauna-schema-migrate), an infrastructure-as-code (IaC) tool, to deploy resources to your Fauna database. This template implements recommended practices for building with Fauna, including restricting access to the database through [user-defined functions](https://docs.fauna.com/fauna/current/learn/understanding/user_defined_functions) (UDFs) and least-privilege roles.
 
+<!--
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/fauna-labs/fauna-workers)
+-->
 
 ## How to use this template
 
