@@ -42,8 +42,6 @@ Open the [Fauna dashboard](https://dashboard.fauna.com) in your browser and logi
 
 Choose *Create database*, provide a valid name, choose a [Region Group][fauna-region-groups] for your database, and choose *Create*.
 
-![Creating your database in Fauna](./images/create-database.png)
-
 > **Note**: If you choose either the *EU* or *US* Region Group, you must set the `FAUNADB_DOMAIN` environment variable to the correct endpoint before you deploy your Fauna resources with Fauna Schema Migrate.
  
 EU Region Group:
@@ -62,8 +60,6 @@ This step is not necessary if you create your database in the *Classic* Region G
 
 Navigate to the *Security* tab and choose *New Key*. Ensure the *Role* is set to *Admin* and choose *Save* to create your new key. Copy and save this admin key to use in the next step.
 
-![Creating your admin key](./images/create-admin-key.png)
-
 > **Note**: You create an admin key *only* to create your Fauna infrastructure, such as [Collections](https://docs.fauna.com/fauna/current/learn/understanding/collections), [Roles](https://docs.fauna.com/fauna/current/security/roles), and [UDFs](https://docs.fauna.com/fauna/current/learn/understanding/user_defined_functions). Never use an admin key in your application!
 
 From your project directory, run Fauna Schema Migrate in interactive mode:
@@ -79,8 +75,6 @@ Choose *Generate* to generate the queries that will run in your migration. Revie
 The final step is creating a client key for accessing your database and storing that key in Cloudflare as a secret.
 
 Return to your browser and again choose *New Key* from the *Security* tab in the Fauna dashboard. Be sure to select *Worker* as the role and choose *Save* to create your client key. Copy and save this client key to use in the next step.
-
-![Creating your client key](./images/create-client-key.png)
 
 > **Note**: This client key is restricted to the actions you explicitly allow. In this application, it is only allowed to call the *CreateProduct*, *GetProductByID*, AddProductQuantity*, and *DeleteProduct* UDFs. It cannot write to or read from any collections or indexes directly.
 
