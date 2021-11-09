@@ -29,8 +29,8 @@ router.add('GET', '/', async (_request, response) => {
 //
 // Expected body:
 // {
-//   "serialNumber": <string>, 
-//   "title": <string>, 
+//   "serialNumber": <string>,
+//   "title": <string>,
 //   "weightLbs": <number>
 // }
 //
