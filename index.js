@@ -3,7 +3,7 @@
 
 import {Router, listen} from 'worktop';
 import faunadb from 'faunadb';
-import {customFetch, getFaunaError} from './utils.js';
+import {getFaunaError} from './utils.js';
 
 const router = new Router();
 const domain = globalThis.FAUNA_DOMAIN || 'db.fauna.com';
@@ -13,7 +13,6 @@ const faunaClient = new faunadb.Client({
   secret: secret,
   headers: { 'X-Fauna-Source': 'fauna-workers' },
   domain: domain,
-  fetch: customFetch,
 });
 
 const { Call } = faunadb.query;
