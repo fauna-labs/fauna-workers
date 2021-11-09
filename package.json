@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "fauna-workers",
   "version": "0.1.0",
+  "name": "fauna-workers",
   "description": "A template for kick starting a Cloudflare Workers project using Fauna, the data API for modern applications.",
-  "main": "index.js",
+  "main": "build/index.mjs",
   "scripts": {
     "build": "worktop build index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
