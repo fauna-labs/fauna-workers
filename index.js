@@ -11,6 +11,7 @@ const secret = globalThis.FAUNA_SECRET || '';
 
 const faunaClient = new faunadb.Client({
   secret: secret,
+  headers: { 'X-Fauna-Source': 'fauna-workers' },
   domain: domain,
   fetch: customFetch,
 });
