@@ -1,19 +1,6 @@
 // Copyright Fauna, Inc.
 // SPDX-License-Identifier: MIT-0
 
-export function customFetch(url, params) {
-  const signal = params.signal;
-  delete params.signal;
-
-  const abortPromise = new Promise((resolve) => {
-    if (signal) {
-      signal.onabort = resolve
-    }
-  });
-
-  return Promise.race([abortPromise, fetch(url, params)])
-}
-
 export function getFaunaError(error) {
 
   const { code, description } = error.requestResult.responseContent.errors[0];

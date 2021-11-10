@@ -13,3 +13,5 @@ node_modules/
 .cargo-ok
 .env.local
 .DS_Store
+
+/build

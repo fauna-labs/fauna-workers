@@ -1,21 +1,23 @@
 {
   "private": true,
+  "version": "0.2.0",
   "name": "fauna-workers",
-  "version": "0.1.0",
   "description": "A template for kick starting a Cloudflare Workers project using Fauna, the data API for modern applications.",
-  "main": "index.js",
+  "main": "build/index.mjs",
   "scripts": {
+    "build": "worktop build index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write '**/*.{js,css,json,md}'"
   },
   "author": "Fauna Labs <https://github.com/fauna-labs/>",
   "license": "MIT-0",
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  },
   "dependencies": {
     "@fauna-labs/fauna-schema-migrate": "^2.1.5",
     "faunadb": "^4.4.1",
-    "worktop": "^0.6.3"
+    "worktop": "^0.7.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "worktop.build": "^0.0.4"
   }
 }
