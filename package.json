@@ -12,8 +12,8 @@
   "author": "Fauna Labs <https://github.com/fauna-labs/>",
   "license": "MIT-0",
   "dependencies": {
-    "@fauna-labs/fauna-schema-migrate": "^2.1.5",
-    "faunadb": "^4.4.1",
+    "@fauna-labs/fauna-schema-migrate": "^2.2.1",
+    "faunadb": "^4.5.4",
     "worktop": "^0.7.3"
   },
   "devDependencies": {
