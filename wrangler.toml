@@ -1,14 +1,7 @@
 name = "fauna-workers"
-type = "javascript"
-
-account_id = ""
-workers_dev = true
-route = ""
-zone_id = ""
 compatibility_date = "2021-11-02"
+main = "index.js"
+node_compat = true
 
 [build]
 command = "npm run build"
-
-[build.upload]
-format = "service-worker"
